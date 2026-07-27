@@ -1,7 +1,14 @@
-/*
- * Custom CSS
- */
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #0d6efd, #0a58ca);
+  min-height: 70vh;
+}
 
-:root {
-  --bs-body-bg: var(--bs-gray-100);
+/* Optional: make cards look a bit nicer */
+.card {
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
