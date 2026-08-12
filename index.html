@@ -3,91 +3,240 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Broken Stitch | Crisis Support for Young People</title>
   
-  <!-- Your custom CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Only ONE stylesheet -->
+  <link rel="stylesheet" href="broken.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Broken Stitch</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+  <!-- ===================== FULL-SCREEN HERO ===================== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="images/logo-color-nobackground.png" alt="Broken Stitch">
+      </a>
+      <nav class="nav">
+        <a href="#what-we-are">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
+    </header>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Registered Charity · Logan CENTRAL, Queensland</p>
+      <h1 class="hero-title">AFTER HOURSSUPPORT<br>FOR YOUNG PEOPLE</h1>
+      <p class="hero-subtitle">
+        After-hours support and a safe house for young people on youth justice orders.<br>
+        We step into the gaps when other systems close for the night.
+      </p>
+      <div class="hero-actions">
+        <a href="#what-we-are" class="btn-primary">Learn More</a>
+        <a href="#contact" class="btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+
+    <a href="#what-we-are" class="scroll-down">
+      <span class="scroll-text">Scroll Down</span>
+      <span class="scroll-line"></span>
+    </a>
+  </section>
+
+  <!-- ===================== WHAT WE ARE ===================== -->
+  <section id="what-we-are" class="what-we-are">
+    <div class="container">
+      <p class="section-label">WHAT WE ARE</p>
+      <h2 class="section-heading">
+        A registered charity providing after-hours crisis support and a safe house for young people on youth justice orders.
+      </h2>
+
+      <div class="about-card">
+        <div class="about-card-text">
+          <h3>THE MEANING BEHIND THE NAME</h3>
+          <p>
+            A stitch is meant to hold things together. When a stitch breaks, the fabric starts to pull apart.
+          </p>
+          <p>
+            Broken Stitch represents the moment when support failed — not the person. Many young people who reoffend aren’t broken. The systems, opportunities, trauma responses and guidance that were meant to hold them together were. The broken stitch symbolises the gaps in education, mentorship, stability and belonging that caused lives to unravel.
+          </p>
+          <p>
+            But a broken stitch can be repaired — often stronger than before. In tailoring, when a stitch breaks you don’t discard the garment. You restitch it, reinforcing it so it won’t fail the same way again.
+          </p>
+          <p>
+            Broken Stitch exists to re-stitch lives. We provide structure, skills, accountability and belief where there were once gaps. The logo’s broken stitch pattern reflects both disruption and intentional repair — a visible reminder that growth comes from fixing what was overlooked, not throwing it away.
+          </p>
+        </div>
+        <div class="about-card-image">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80" alt="Young people supported">
+        </div>
+      </div>
+
+      <div class="philosophy-block">
+        <h3>Our Approach</h3>
+        <p>
+          We are not the solution to the problems these young people face. Those problems run deeper than any single program can claim to fix.
+        </p>
+        <p>
+          As Thomas Sowell put it: there are no solutions — only trade-offs.
+        </p>
+        <p>
+          Broken Stitch offers practical trade-offs. We provide real alternatives that help meet the criminogenic needs that drive offending behaviour — structure, consistent presence, safe places to go, and people who will not walk away when the formal systems close for the night. We step into the gaps. That is the work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section id="services" class="services">
+    <div class="container">
+      <p class="section-label">WHAT WE DO</p>
+      <h2 class="section-heading services-heading">Practical support when it matters most</h2>
+
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="service-icon">🏠</div>
+          <h4>SAFE HOUSE</h4>
+          <p>A place to go when there is nowhere else. Short-term respite accommodation that gives young people a safe, stable option instead of the street or further risk.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">🕐</div>
+          <h4>AFTER-HOURS SUPPORT</h4>
+          <p>Support does not stop at 5pm. We provide outreach and crisis response when most services are closed — the hours when young people are most exposed.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">🤝</div>
+          <h4>CRISIS INTERVENTION</h4>
+          <p>Immediate presence when things escalate. We step in quickly to de-escalate, stabilise and offer a different path in the moment.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">👨‍👩‍👧</div>
+          <h4>FAMILY ENGAGEMENT</h4>
+          <p>Where it is safe and appropriate, we work with families and kin. Strong connections are part of the fabric that holds young people together.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">🔗</div>
+          <h4>REFERRAL PATHWAYS</h4>
+          <p>We connect young people to the right supports — education, housing, health, and other services — so the re-stitching continues beyond our direct involvement.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">🛡️</div>
+          <h4>CULTURAL SAFETY</h4>
+          <p>Particularly for Aboriginal and Torres Strait Islander young people, we prioritise cultural connection, respect and safety in everything we do.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">📋</div>
+          <h4>CASE SUPPORT</h4>
+          <p>Consistent, dedicated support that builds structure and accountability over time — not one-off interventions that disappear when the crisis passes.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">💬</div>
+          <h4>DEBRIEFS &amp; FOLLOW-UP</h4>
+          <p>After a crisis we stay present. We check in, review what happened, and keep the relationship going so the young person is not left alone again.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">🌱</div>
+          <h4>ALTERNATIVES TO OFFENDING</h4>
+          <p>We offer practical trade-offs that meet criminogenic needs differently — giving young people real options instead of the same pathways that lead back to reoffending.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER / CONTACT ===================== -->
+
+<footer id="contact" class="footer">
+  <div class="footer-inner">
+
+    <!-- Top row: 3 columns -->
+    <div class="footer-grid">
+
+      <!-- Column 1: Contact + Charity badge -->
+      <div class="footer-col footer-contact">
+        <h5>CONTACT DETAILS</h5>
+        <p class="footer-phone">0422 003 255</p>
+        <p><a href="mailto:info@brokenstitch.org.au">info@brokenstitch.org.au</a></p>
+        <p>Logan Central, Queensland</p>
+
+    
+
+        <!-- Registered Charity badge sits under contact, like the example -->
+        <div class="charity-badge-wrap">
+          <img src="images/acnc.png" alt="Registered Charity – ACNC" class="charity-badge">
+          <span class="dgr-label">DGR Status Approved</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Useful / documentation links (placeholders for future) -->
+      <div class="footer-col">
+        <h5>USEFUL LINKS</h5>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Approach</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Safe House</a></li>
+          <li><a href="#">Get in Touch</a></li>
         </ul>
       </div>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero text-center text-white d-flex align-items-center">
-    <div class="container">
-      <h1 class="display-4 fw-bold">Broken Stitch</h1>
-      <p class="lead mb-4">A simple and clean Bootstrap starter page</p>
-      <a href="#" class="btn btn-light btn-lg px-4">Get Started</a>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row text-center g-4">
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body p-4">
-              <h3 class="h5">Feature One</h3>
-              <p class="text-muted">Short description of your first feature goes here.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body p-4">
-              <h3 class="h5">Feature Two</h3>
-              <p class="text-muted">Short description of your second feature goes here.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body p-4">
-              <h3 class="h5">Feature Three</h3>
-              <p class="text-muted">Short description of your third feature goes here.</p>
-            </div>
-          </div>
-        </div>
+      <div class="footer-col">
+        <h5>DOCUMENTATION</h5>
+        <ul class="footer-links">
+          <li><a href="#">Annual Report</a></li>
+          <li><a href="#">Governance &amp; Privacy</a></li>
+          <li><a href="#">Policies</a></li>
+          <li><a href="#">DGR Information</a></li>
+          <li><a href="#">Charity Details</a></li>
+        </ul>
       </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4">
-    <div class="container">
-      <p class="mb-0">&copy; 2026 Broken Stitch. All rights reserved.</p>
-    </div>
-  </footer>
+      
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Column 3: Short statement -->
+      <div class="footer-col footer-statement">
+        <h5>OUR PURPOSE</h5>
+        <p>
+          Broken Stitch provides after-hours crisis support and a safe house for young people on youth justice orders. We step into the gaps when other systems close for the night.
+        </p>
+      </div>
+
+      <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="X / Twitter">𝕏</a>
+        </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>© 2026 Broken Stitch. All rights reserved. · Registered Charity · DGR Approved</p>
+      <p class="footer-abn">ABN XX XXX XXX XXX</p>
+    </div>
+
+  </div>
+</footer>
+
 </body>
 </html>
