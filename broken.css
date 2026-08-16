@@ -250,40 +250,7 @@ a {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Scroll indicator */
-.scroll-down {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  transition: color 0.2s ease;
-}
 
-.scroll-down:hover {
-  color: #fff;
-}
-
-.scroll-text {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  font-weight: 500;
-}
-
-.scroll-line {
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
-}
 
 /* =====================================================
    WHAT WE ARE
@@ -634,9 +601,15 @@ a {
     padding: 1.1rem 1.25rem;
   }
 
-  .logo img {
-    height: 36px;
-  }
+ .logo img {
+  height: 48px;
+  width: auto;
+  /* White outline that follows the logo shape */
+  filter: drop-shadow(0 0 1px #fff)
+          drop-shadow(0 0 2px #fff)
+          drop-shadow(0 0 3px rgba(255, 255, 255, 0.8));
+  transition: opacity 0.2s ease;
+}
 
   .hero-content {
     padding: 0 1.25rem;
@@ -716,4 +689,190 @@ img.charity-badge {
     height: 100px !important;
     max-width: 160px !important;
   }
+}
+
+/* Cleaner Correlations – sits under subtitle */
+.hero-correlations {
+  margin: 1.75rem auto 2rem;
+  max-width: 640px;
+}
+
+.hero-correlations-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 0.9rem;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 110px;
+  padding: 0.85rem 1rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.hero-stat:hover {
+  border-color: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-stat-number {
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.hero-stat-label {
+  font-size: 0.68rem;
+  opacity: 0.85;
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero-stats {
+    gap: 0.5rem;
+  }
+  .hero-stat {
+    min-width: 95px;
+    padding: 0.7rem 0.75rem;
+  }
+  .hero-stat-number {
+    font-size: 1.35rem;
+  }
+}
+
+/* Give the main hero text more space */
+.hero-content {
+  max-width: 780px;
+  padding-bottom: 1rem;
+}
+
+.hero-subtitle {
+  margin-bottom: 2rem;          /* was tighter */
+}
+
+.hero-actions {
+  margin-bottom: 2.75rem;       /* clear gap before stats */
+}
+
+/* Correlations – lighter & more spaced */
+.hero-correlations {
+  margin-top: 0;
+  padding-top: 0.5rem;
+}
+
+.hero-correlations-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 1rem;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 150px;
+  padding: 0.9rem 0.9rem 0.85rem;
+  background: rgba(0, 0, 0, 0.28);
+  border: 3px solid rgba(255, 255, 255, 0.35);  /* thinner border */
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.hero-stat:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-stat-number {
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.hero-stat-label {
+  font-size: 0.65rem;
+  opacity: 0.8;
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero-actions {
+    margin-bottom: 2rem;
+  }
+  .hero-stats {
+    gap: 0.6rem;
+  }
+  .hero-stat {
+    min-width: 100px;
+    padding: 0.75rem 0.7rem;
+  }
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero-stat {
+  min-width: 105px;
+  padding: 0.85rem 0.8rem;
+}
+
+.hero-correlations-title {
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.hero-correlations-text {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+  font-weight: 400;
 }
