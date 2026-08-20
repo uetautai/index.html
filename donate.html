@@ -1,11 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | Broken Stitch</title>
+  <link rel="stylesheet" href="broken.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+  <div class="donate-page">
+
+    <header class="donate-header">
+      <a href="index.html" class="logo">
+        <img src="images/logo-color-nobackground.png" alt="Broken Stitch">
+      </a>
+      <nav class="nav">
+        <a href="index.html#what-we-are">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="donate.html" class="nav-donate">Donate</a>
+      </nav>
+    </header>
+
+    <div class="donate-hero">
+      <h1>Support Broken Stitch</h1>
+      <p>
+        Your donation helps fund after-hours crisis support and a safe house
+        for young people on youth justice orders in Logan.
+      </p>
+    </div>
+
+    <div class="donate-wrap">
+      <div class="donate-card">
+        <h2>Make a donation</h2>
+
+        <form id="donate-form" action="#" method="post">
+
+          <div class="donate-form-group">
+            <label>I am donating as</label>
+            <div class="donate-donor-type">
+              <label>
+                <input type="radio" name="donor_type" value="individual" checked onchange="toggleOrgFields()">
+                Individual
+              </label>
+              <label>
+                <input type="radio" name="donor_type" value="organisation" onchange="toggleOrgFields()">
+                Organisation
+              </label>
+            </div>
+          </div>
+
+          <div id="individual-fields">
+            <div class="donate-form-group">
+              <label for="full_name">Full name</label>
+              <input type="text" id="full_name" name="full_name" placeholder="Your full name" required>
+            </div>
+          </div>
+
+          <div id="org-fields" class="donate-org-only">
+            <div class="donate-form-group">
+              <label for="org_name">Organisation / company name</label>
+              <input type="text" id="org_name" name="org_name" placeholder="Legal entity name">
+            </div>
+            <div class="donate-form-group">
+              <label for="abn">ABN</label>
+              <input type="text" id="abn" name="abn" placeholder="XX XXX XXX XXX" inputmode="numeric">
+            </div>
+            <div class="donate-form-group">
+              <label for="contact_name">Contact person</label>
+              <input type="text" id="contact_name" name="contact_name" placeholder="Name of person arranging the donation">
+            </div>
+            <div class="donate-form-group">
+              <label for="contact_role">Role / position</label>
+              <input type="text" id="contact_role" name="contact_role" placeholder="e.g. Director, CSR Manager">
+            </div>
+            <div class="donate-checkbox-row">
+              <input type="checkbox" id="partner_logo" name="partner_logo" value="yes">
+              <label for="partner_logo">
+                We would like our logo displayed on the Broken Stitch website as a supporting partner
+                (subject to donation amount and approval).
+              </label>
+            </div>
+            <div class="donate-form-group">
+              <label for="logo_url">Logo link (optional)</label>
+              <input type="url" id="logo_url" name="logo_url" placeholder="https://yoursite.com/logo.png">
+            </div>
+            <div class="donate-form-group">
+              <label for="partner_notes">Partnership notes (optional)</label>
+              <textarea id="partner_notes" name="partner_notes" rows="2" placeholder="Any preferences for recognition or future partnership"></textarea>
+            </div>
+          </div>
+
+          <div class="donate-form-group">
+            <label for="email">Email (for tax receipt)</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="donate-form-group">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX">
+          </div>
+
+          <div class="donate-form-group">
+            <label>Amount (AUD)</label>
+            <div class="donate-amount-options">
+              <label><input type="radio" name="amount" value="25"> $25</label>
+              <label><input type="radio" name="amount" value="50" checked> $50</label>
+              <label><input type="radio" name="amount" value="100"> $100</label>
+              <label><input type="radio" name="amount" value="250"> $250</label>
+            </div>
+            <input type="number" name="custom_amount" id="custom_amount" min="5" step="1" placeholder="Or enter custom amount">
+          </div>
+
+          <div class="donate-form-group">
+            <label>Frequency</label>
+            <div class="donate-frequency-options">
+              <label><input type="radio" name="frequency" value="once" checked> One-time</label>
+              <label><input type="radio" name="frequency" value="weekly"> Weekly</label>
+              <label><input type="radio" name="frequency" value="monthly"> Monthly</label>
+              <label><input type="radio" name="frequency" value="annually"> Annually</label>
+            </div>
+          </div>
+
+          <div class="donate-tax-note">
+            <strong>Tax deductible.</strong> Broken Stitch is a registered charity with Deductible Gift Recipient (DGR) status.
+            Donations of $2 or more are tax deductible in Australia.
+            <br><br>
+            Verify our details on the
+            <a href="https://abr.business.gov.au/ABN/View?abn=15693395970" target="_blank" rel="noopener">
+              Australian Business Register (ABN 15 693 395 970)
+            </a>.
+          </div>
+
+          <div class="donate-checkbox-row">
+            <input type="checkbox" id="receipt" name="receipt" value="yes" checked>
+            <label for="receipt">Please email me a tax-deductible donation receipt</label>
+          </div>
+
+          <div class="donate-checkbox-row">
+            <input type="checkbox" id="updates" name="updates" value="yes">
+            <label for="updates">I am happy to receive occasional updates about Broken Stitch’s work</label>
+          </div>
+
+          <div class="donate-stripe-box">
+            <p><strong>Stripe payment embed goes here</strong></p>
+            <p>Once you have a Stripe account, paste your Payment Link or Checkout embed code in this area.</p>
+            <code>
+              &lt;!-- Paste Stripe embed / Payment Link button here --&gt;
+            </code>
+          </div>
+
+          <button type="submit" class="donate-btn">Continue to payment</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="donate-aside">
+      <h3>What your donation supports</h3>
+      <p>
+        After-hours crisis response, safe-house operations, and practical support
+        for young people on youth justice orders when other systems are closed.
+      </p>
+
+      <h3>Organisations &amp; partners</h3>
+      <p>
+        If you are donating as a business or corporation and would like recognition
+        or a formal partnership, tick the logo option above. After payment you will
+        be directed to a short form so we can collect your logo and preferred wording.
+        Recognition is subject to amount, timing, and Broken Stitch approval.
+      </p>
+
+      <h3>Receipts &amp; records</h3>
+      <p>
+        We issue tax-deductible receipts for gifts of $2 or more. For organisations,
+        please ensure the legal name and ABN match the entity making the gift so
+        receipts are valid for your records.
+      </p>
+
+      <h3>Questions</h3>
+      <p>
+        Email <a href="mailto:info@brokenstitch.org.au">info@brokenstitch.org.au</a>
+        or call <a href="tel:+61459723335">0459 723 335</a>.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleOrgFields() {
+      const isOrg = document.querySelector('input[name="donor_type"]:checked').value === 'organisation';
+      const orgFields = document.getElementById('org-fields');
+      orgFields.classList.toggle('is-visible', isOrg);
+      document.getElementById('org_name').required = isOrg;
+      document.getElementById('full_name').required = !isOrg;
+    }
+
+    document.querySelectorAll('input[name="amount"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        document.getElementById('custom_amount').value = '';
+      });
+    });
+  </script>
+
+<footer id="contact" class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-grid">
+
+      <!-- Column 1: Contact -->
+      <div class="footer-col footer-contact">
+        <h5>CONTACT DETAILS</h5>
+        <p class="footer-phone">
+          <a href="tel:+61459723335">Contact Us</a>
+        </p>
+        <p><a href="mailto:info@brokenstitch.org.au">info@brokenstitch.org.au</a></p>
+        <p>Logan Central, Queensland</p>
+      </div>
+
+      <!-- Column 2: Documentation -->
+      <div class="footer-col">
+        <h5>DOCUMENTATION</h5>
+        <ul class="footer-links">
+          <li><a href="annual_report.html">Annual Report</a></li>
+          <li><a href="governance.html">Governance &amp; Privacy</a></li>
+          <li><a href="#">Policies</a></li>
+          <li><a href="https://abr.business.gov.au/ABN/View?abn=15693395970" target="_blank" rel="noopener">DGR Information</a></li>
+          <li><a href="#">Charity Details</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Charity status -->
+      <div class="footer-col footer-charity">
+        <h5>REGISTERED CHARITY</h5>
+        <div class="charity-badge-wrap">
+          <img src="images/acnc.png" alt="Registered Charity – ACNC" class="charity-badge">
+          <span class="dgr-label">DGR Status Endorsed</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>© 2026 Broken Stitch. All rights reserved.</p>
+      <p>ABN 15 693 395 970 · Registered Charity </p>
+    </div>
+
+  </div>
+</footer>
 </body>
 </html>
