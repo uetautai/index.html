@@ -76,7 +76,7 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: grayscale(0.5) brightness(1.05) contrast(1.15);
+  filter: grayscale(0.5) brightness(1.00) contrast(.1);
   z-index: 0;
 }
 
