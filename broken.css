@@ -2,7 +2,7 @@
    BROKEN STITCH – Website Styles
    Branding retained (Inter, #c8102e accent, dark hero,
    uppercase buttons, section labels, philosophy left border).
-   Content aligned to Living Strategic Baseline / Priority 8.
+   Content aligned to Living Strategic Baseline 00 (29 August 2026), Layer B only.
    ===================================================== */
 
 *,
@@ -20,6 +20,9 @@
   --text: #1a1a1a;
   --muted: #5c5c5c;
   --accent: #c8102e;
+  --chrome-blue: #004aac;
+  --chrome-blue-mid: #004aac;
+  --chrome-blue-deep: #002870;
   --radius: 16px;
   --max-width: 1100px;
 }
@@ -29,6 +32,10 @@ html {
   scroll-behavior: smooth;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: var(--bg);
@@ -36,6 +43,34 @@ body {
   line-height: 1.55;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  animation: page-in 0.45s ease;
+}
+
+.page {
+  animation: page-in 0.5s ease;
+}
+
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+::view-transition-old(root) {
+  animation: 0.22s ease both fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 0.32s ease both page-in;
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  body, .page { animation: none; }
+  @view-transition { navigation: none; }
 }
 
 body.nav-open {
@@ -102,8 +137,7 @@ a {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-color: #b8b5b5;
-  background-image: url;
+  background-color: #928b8b;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -140,6 +174,30 @@ a {
   top: 0;
   background: #0f0f0f;
   padding: 1.1rem 2.5rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-text {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.badge-fallback {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 0.4rem 0.65rem;
 }
 
 .logo img {
@@ -261,6 +319,13 @@ a {
   text-shadow: 0 2px 28px rgba(0, 0, 0, 0.4);
 }
 
+.title-stitch {
+  color: var(--chrome-blue);
+  text-shadow:
+    0 0 18px rgba(0, 74, 172, 0.55),
+    0 2px 28px rgba(0, 0, 0, 0.4);
+}
+
 .hero-subtitle {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -271,7 +336,7 @@ a {
 
 .hours-badge {
   display: inline-block;
-  background: var(--accent);
+  background: var(--chrome-blue);
   color: #fff;
   font-weight: 700;
   font-size: 0.9rem;
@@ -301,6 +366,7 @@ a {
 
 .btn-primary,
 .btn-secondary,
+.btn-dark,
 .btn-ghost,
 .btn-ghost-dark {
   display: inline-flex;
@@ -338,6 +404,18 @@ a {
 .btn-secondary:hover {
   border-color: #fff;
   background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background: #1a1a1a;
+  color: #fff;
+  border: 2px solid #1a1a1a;
+}
+
+.btn-dark:hover {
+  background: #2a2a2a;
+  border-color: #2a2a2a;
   transform: translateY(-2px);
 }
 
@@ -474,7 +552,7 @@ a {
 }
 
 /* =====================================================
-   SERVICES / WHO IT’S FOR
+   SERVICES
    ===================================================== */
 .services {
   padding: 2rem 0 6rem;
@@ -794,6 +872,7 @@ a {
 
   .btn-primary,
   .btn-secondary,
+  .btn-dark,
   .btn-ghost,
   .btn-ghost-dark {
     width: 100%;
@@ -906,7 +985,7 @@ a {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
-.stripe-cta {
+.donate-cta {
   margin: 1rem 0;
 }
 
@@ -973,4 +1052,178 @@ a {
 
 .page section {
   margin-bottom: 2.5rem;
+}
+
+/* =====================================================
+   REFERRAL FORM (Layer B — contact details only)
+   ===================================================== */
+.form-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
+.referral-form {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.form-fieldset {
+  border: 0;
+  margin: 0 0 1.35rem;
+  padding: 0;
+}
+
+.form-legend {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-bottom: 0.55rem;
+  color: var(--text);
+}
+
+.choice-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.45rem;
+}
+
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #d8d5ce;
+  border-radius: 6px;
+  background: var(--white);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.choice:has(input:checked) {
+  border-color: var(--accent);
+  background: #fff;
+}
+
+.choice input {
+  accent-color: var(--accent);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text);
+}
+
+.field em {
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+
+.field input,
+.field textarea {
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid #d8d5ce;
+  border-radius: 6px;
+  padding: 0.7rem 0.8rem;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.form-submit {
+  margin-top: 0.35rem;
+  min-width: 160px;
+  cursor: pointer;
+}
+
+.form-status {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.form-status.is-ok {
+  color: #2c4a3e;
+}
+
+.form-status.is-error {
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .referral-form {
+    padding: 0;
+  }
+
+  .form-submit {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.report-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 1rem 0 2.25rem;
+}
+
+.report-link {
+  display: block;
+  padding: 1rem 1.1rem;
+  background: var(--white);
+  border: 1px solid #d8d5ce;
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.report-link:hover {
+  border-color: var(--accent);
+}
+
+.report-link span {
+  display: block;
+  margin-top: 0.3rem;
+  font-weight: 400;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.report-block {
+  scroll-margin-top: 5.5rem;
+  padding-top: 0.5rem;
+}
+
+.page-logo {
+  display: block;
+  height: 72px;
+  width: auto;
+  margin: 0.5rem 0 1.25rem;
 }

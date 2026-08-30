@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Referral. BrokenStitch. After-hours Youth Response for High Risk Youth. Logan, Queensland.">
+  <title>Referral | BrokenStitch</title>
+  <link rel="stylesheet" href="broken.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#referral-form">Skip to referral form</a>
+  <header class="header header-solid">
+    <a href="index.html" class="logo">
+      <img src="images/logo-color-nobackground.png" alt="BrokenStitch" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+      <span class="logo-text" hidden>BrokenStitch</span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="Primary">
+      <a href="referral.html" aria-current="page">Referral</a>
+      <a href="child-safety.html">Child safety commitment</a>
+      <a href="governance.html">About</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <main id="main" class="page">
+    <div class="container page-wrap">
+      <img class="page-logo" src="images/logo-color-nobackground.png" alt="BrokenStitch" onerror="this.hidden=true;">
+      <h1 class="cap-heading">Referral</h1>
+      <p class="page-lead">After-hours Youth Response for High Risk Youth. Monday–Friday, 5:00 pm–10:00 pm. Logan, Queensland.</p>
+      <form class="referral-form" id="referral-form" novalidate>
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">I am contacting as</legend>
+          <div class="choice-row">
+            <label class="choice">
+              <input type="radio" name="contact_type" value="individual" required>
+              <span>Individual</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="contact_type" value="organisation" required>
+              <span>Organisation</span>
+            </label>
+          </div>
+        </fieldset>
+        <label class="field">
+          <span>Name</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label class="field" id="role-field" hidden>
+          <span>Role <em>(optional)</em></span>
+          <input type="text" name="role" autocomplete="organization-title">
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label class="field">
+          <span>Phone <em>(optional)</em></span>
+          <input type="tel" name="phone" autocomplete="tel">
+        </label>
+        <label class="field">
+          <span>Message <em>(optional)</em></span>
+          <textarea name="message" rows="4"></textarea>
+        </label>
+        <button type="submit" class="btn-primary form-submit">Submit</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>© 2026 BrokenStitch · ABN 15 693 395 970</p>
+        <p><a href="index.html">Home</a> · <a href="child-safety.html">Child safety commitment</a> · <a href="donate.html">Donate</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js" defer></script>
+</body>
+</html>

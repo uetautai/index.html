@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Raise a concern with BrokenStitch. Child safety. Logan, Queensland.">
+  <title>Parents and guardians | BrokenStitch</title>
+  <link rel="stylesheet" href="broken.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#parent-form">Skip to form</a>
+  <header class="header header-solid">
+    <a href="index.html" class="logo">
+      <img src="images/logo-color-nobackground.png" alt="BrokenStitch" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+      <span class="logo-text" hidden>BrokenStitch</span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="Primary">
+      <a href="referral.html">Referral</a>
+      <a href="child-safety.html" aria-current="page">Child safety commitment</a>
+      <a href="governance.html">About</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <main id="main" class="page">
+    <div class="container page-wrap">
+      <p><a class="text-link" href="child-safety.html">Child safety commitment</a></p>
+      <img class="page-logo" src="images/logo-color-nobackground.png" alt="BrokenStitch" onerror="this.hidden=true;">
+      <h1 class="cap-heading">Parents and guardians</h1>
+      <p class="page-lead">If you are worried about a young person, or you want us to follow up. You do not have to answer every question.</p>
+      <p>If it is an emergency, call <a class="text-link" href="tel:000">000</a>.</p>
+      <form class="referral-form report-form" id="parent-form" data-form="child-safety-parent" data-subject="BrokenStitch child safety concern (parent or guardian)" novalidate>
+          <label class="field">
+            <span>What you want us to know</span>
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+          <label class="field">
+            <span>Young person's first name <em>(optional)</em></span>
+            <input type="text" name="young_person_first_name" autocomplete="off">
+          </label>
+          <label class="field">
+            <span>Name <em>(optional)</em></span>
+            <input type="text" name="name" autocomplete="name">
+          </label>
+          <label class="field">
+            <span>Email <em>(optional)</em></span>
+            <input type="email" name="email" autocomplete="email">
+          </label>
+          <label class="field">
+            <span>Phone <em>(optional)</em></span>
+            <input type="tel" name="phone" autocomplete="tel">
+          </label>
+          <fieldset class="form-fieldset">
+            <legend class="form-legend">Would you like us to contact you? <em>(optional)</em></legend>
+            <div class="choice-row">
+              <label class="choice">
+                <input type="radio" name="follow_up" value="yes">
+                <span>Yes</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="follow_up" value="no">
+                <span>No</span>
+              </label>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn-primary form-submit">Submit</button>
+          <p class="form-status" id="parent-form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>© 2026 BrokenStitch · ABN 15 693 395 970</p>
+        <p><a href="index.html">Home</a> · <a href="child-safety.html">Child safety commitment</a> · <a href="donate.html">Donate</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js" defer></script>
+</body>
+</html>
