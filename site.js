@@ -1,6 +1,6 @@
 /* BrokenStitch site behaviour
-   Replace these before connecting Stripe receipt emails. */
-var ORGANISATION_EMAIL = "YOUR_EMAIL_HERE";
+   Replace the logo URL before connecting Stripe receipt emails. */
+var ORGANISATION_EMAIL = "contact@brokenstitch.org.au";
 var LOGO_URL = "YOUR_LOGO_URL_HERE";
 
 (function () {
