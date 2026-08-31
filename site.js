@@ -1,9 +1,15 @@
 /* BrokenStitch site behaviour
+<<<<<<< HEAD
    Layer B public site only.
 */
 var ADMIN_EMAIL = "referrals@brokenstitch.org.au";
 var SAFETY_EMAIL = "info@brokenstitch.org.au";
 var FORM_ENDPOINT = ""; // director pastes form-handler URL here
+=======
+   Replace the logo URL before connecting Stripe receipt emails. */
+var ORGANISATION_EMAIL = "contact@brokenstitch.org.au";
+var LOGO_URL = "YOUR_LOGO_URL_HERE";
+>>>>>>> a8cec52afba6f8523359d809ecb78f651e1e78a8
 
 (function () {
   var toggle = document.querySelector(".menu-toggle");
