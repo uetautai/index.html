@@ -3,7 +3,7 @@
 */
 var ADMIN_EMAIL = "referrals@brokenstitch.org.au";
 var SAFETY_EMAIL = "info@brokenstitch.org.au";
-var FORM_ENDPOINT = ""; // director pastes form-handler URL here
+var FORM_ENDPOINT = "https://formspree.io/f/xppzpvld";
 
 (function () {
   var toggle = document.querySelector(".menu-toggle");
