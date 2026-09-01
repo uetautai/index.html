@@ -3,55 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donor confirmation email | BrokenStitch</title>
-  <style>
-    body { margin: 0; background: #f5f4f0; font-family: Inter, Arial, sans-serif; color: #1a1a1a; }
-    .wrap { max-width: 560px; margin: 24px auto; background: #fff; padding: 32px 28px; }
-    img.logo { height: 48px; width: auto; margin-bottom: 24px; }
-    .logo-text { display: none; font-size: 18px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 24px; }
-    h1 { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 16px; }
-    p { font-size: 15px; line-height: 1.6; color: #3a3a3a; }
-    .box { background: #f5f4f0; padding: 16px; margin: 20px 0; }
-    .foot { font-size: 12px; color: #5c5c5c; margin-top: 28px; }
-  </style>
+  <title>Thank you for your gift | BrokenStitch</title>
+  <!-- Layer B. Per-gift DGR wording. From: info@brokenstitch.org.au only.
+       Director issues after the gift is actually received. Do not auto-send from a processor.
+       Director decision required. -->
 </head>
-<body>
-  <div class="wrap">
-    <img class="logo" src="images/logo-color-nobackground.png" alt="BrokenStitch" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-    <div class="logo-text">BrokenStitch</div>
-    <h1>Donation confirmation</h1>
-    <p>Dear {{DONOR_NAME}},</p>
-    <p>
-      Thank you. BrokenStitch has received your gift of <strong>{{AMOUNT}}</strong>
-      on {{DATE}}.
-    </p>
-    <div class="box">
-      <p><strong>Organisation:</strong> BrokenStitch</p>
-      <p><strong>ABN:</strong> 15 693 395 970</p>
-      <p><strong>Amount:</strong> {{AMOUNT}}</p>
-      <p><strong>Date:</strong> {{DATE}}</p>
-      <p><strong>Reference:</strong> {{TRANSACTION_ID}}</p>
-    </div>
-    <p>Card donations are processed by a third party.</p>
-    <p>BrokenStitch does not store card numbers on this website.</p>
-    <p>
-      This gift supports After-hours Youth Response for High Risk Youth.
-      Monday–Friday, 5:00 pm–10:00 pm. Logan, Queensland.
-    </p>
-    <p>
-      BrokenStitch is endorsed as a Deductible Gift Recipient. Gifts of $2 or more
-      are generally tax deductible in Australia. Please retain this email as your receipt.
-    </p>
-    <p>With thanks,<br>BrokenStitch</p>
-    <p class="foot">
-<<<<<<< HEAD
-      info@brokenstitch.org.au · Logan, Queensland<br>
-      This is a receipt, not a marketing list. Questions: info@brokenstitch.org.au
-=======
-      contact@brokenstitch.org.au · Logan, Queensland<br>
-      This is a receipt, not a marketing list. Questions: contact@brokenstitch.org.au
->>>>>>> a8cec52afba6f8523359d809ecb78f651e1e78a8
-    </p>
+<body style="margin:0;padding:0;background:#f5f4f0;font-family:Inter,'Helvetica Neue',Arial,sans-serif;color:#1a1a1a;">
+<div style="display:none;font-size:1px;color:#f5f4f0;max-height:0;overflow:hidden;">Receipt for your gift to BROKEN STITCH LTD, ABN 15 693 395 970.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f5f4f0;">
+<tr><td align="center" style="padding:24px 12px;">
+  <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:#ffffff;">
+    <tr><td style="height:4px;background:#cc1716;font-size:0;line-height:0;">&nbsp;</td></tr>
+    <tr><td style="padding:28px 32px 0;">
+      <img src="images/logo-color-nobackground.png" alt="BrokenStitch" width="220" style="width:220px;max-width:60%;height:auto;display:block;border:0;">
+      <div style="margin-top:8px;font-size:10px;letter-spacing:0.13em;text-transform:uppercase;color:#5c5c5c;">Logan, Queensland</div>
+    </td></tr>
+    <tr><td style="padding:24px 32px 0;">
+      <h1 style="margin:0;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#cc1716;">Receipt for your gift</h1>
+    </td></tr>
+    <tr><td style="padding:8px 32px 32px;font-size:15px;line-height:1.6;color:#3a3a3a;">
+      <p style="margin:0 0 14px;">Dear {{DONOR_NAME}},</p>
+      <p style="margin:0 0 14px;">Thank you. BROKEN STITCH LTD has received your gift of <strong>{{AMOUNT}}</strong> on {{DATE}}.</p>
+      <div style="background:#f5f4f0;border-left:3px solid #cc1716;padding:14px 16px;margin:0 0 16px;font-size:14px;line-height:1.7;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#002870;margin-bottom:8px;">This receipt is for a gift</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr><td style="font-size:14px;padding:3px 0;" width="42%"><span style="color:#5c5c5c;">Organisation</span></td><td style="font-size:14px;padding:3px 0;"><strong>BROKEN STITCH LTD</strong></td></tr>
+          <tr><td style="font-size:14px;padding:3px 0;"><span style="color:#5c5c5c;">ABN</span></td><td style="font-size:14px;padding:3px 0;">15 693 395 970</td></tr>
+          <tr><td style="font-size:14px;padding:3px 0;"><span style="color:#5c5c5c;">Receipt number</span></td><td style="font-size:14px;padding:3px 0;">{{RECEIPT_NO}}</td></tr>
+          <tr><td style="font-size:14px;padding:3px 0;"><span style="color:#5c5c5c;">Date gift received</span></td><td style="font-size:14px;padding:3px 0;">{{DATE}}</td></tr>
+          <tr><td style="font-size:14px;padding:3px 0;"><span style="color:#5c5c5c;">Amount of gift</span></td><td style="font-size:14px;padding:3px 0;"><strong>AUD {{AMOUNT}}</strong></td></tr>
+          <tr><td style="font-size:14px;padding:3px 0;"><span style="color:#5c5c5c;">Form of gift</span></td><td style="font-size:14px;padding:3px 0;">Money</td></tr>
+          <tr><td style="font-size:14px;padding:3px 0;"><span style="color:#5c5c5c;">Reference</span></td><td style="font-size:14px;padding:3px 0;">{{TRANSACTION_REF}}</td></tr>
+        </table>
+      </div>
+      <p style="margin:0 0 14px;">Your gift was given voluntarily. A gift does not buy a place, a reward, or a promised result.</p>
+      <p style="margin:0 0 14px;">Gifts hold the published window: Monday to Friday, 5:00 pm to 10:00 pm.</p>
+      <p style="margin:0 0 14px;">Gifts of $2 or more to a deductible gift recipient are generally tax deductible in Australia. Please keep this email as your receipt.</p>
+      <p style="margin:0 0 14px;">BROKEN STITCH LTD is not currently registered for GST. This email is not a tax invoice and includes no GST.</p>
+      <p style="margin:0 0 14px;">If your gift was made by card, it was processed by a third party. BROKEN STITCH LTD does not store card numbers.</p>
+      <p style="margin:0 0 14px;">A Statement of Deductible Donations covering the full financial year is issued after 30 June.</p>
+      <p style="margin:0 0 14px;">With thanks,<br>{{DIRECTOR_NAME}}<br>BROKEN STITCH LTD</p>
+    </td></tr>
+    <tr><td style="padding:0 32px;"><div style="border-top:1px solid #e2e0da;font-size:0;line-height:0;">&nbsp;</div></td></tr>
+    <tr><td style="padding:18px 32px 28px;font-size:11px;line-height:1.7;color:#5c5c5c;">
+      <strong style="color:#002870;font-size:11.5px;letter-spacing:0.04em;">BROKEN STITCH LTD</strong><br>
+      ABN 15 693 395 970 · Registered charity (ACNC) · Endorsed Deductible Gift Recipient<br>
+      <a href="mailto:info@brokenstitch.org.au" style="color:#004aac;text-decoration:none;">info@brokenstitch.org.au</a> · Logan, Queensland<br>
+      <span style="color:#8a8a8a;">This is a receipt, not a marketing list.</span>
+    </td></tr>
+    <tr><td style="height:4px;background:#002870;font-size:0;line-height:0;">&nbsp;</td></tr>
+  </table>
+  <div style="max-width:600px;margin:12px auto 0;font-size:10px;color:#8a8a8a;text-align:center;line-height:1.6;">
+    Sent because a gift was received. Questions: info@brokenstitch.org.au
   </div>
+</td></tr></table>
 </body>
 </html>

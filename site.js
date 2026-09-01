@@ -1,15 +1,9 @@
 /* BrokenStitch site behaviour
-<<<<<<< HEAD
    Layer B public site only.
 */
 var ADMIN_EMAIL = "referrals@brokenstitch.org.au";
 var SAFETY_EMAIL = "info@brokenstitch.org.au";
 var FORM_ENDPOINT = ""; // director pastes form-handler URL here
-=======
-   Replace the logo URL before connecting Stripe receipt emails. */
-var ORGANISATION_EMAIL = "contact@brokenstitch.org.au";
-var LOGO_URL = "YOUR_LOGO_URL_HERE";
->>>>>>> a8cec52afba6f8523359d809ecb78f651e1e78a8
 
 (function () {
   var toggle = document.querySelector(".menu-toggle");
@@ -129,6 +123,40 @@ var LOGO_URL = "YOUR_LOGO_URL_HERE";
         "Email: " + payload.email,
         payload.phone ? "Phone: " + payload.phone : "",
         payload.message ? "Message: " + payload.message : ""
+      ].filter(Boolean).join("\n");
+    }
+  });
+
+  wireForm({
+    id: "partner-form",
+    statusId: "partner-form-status",
+    email: SAFETY_EMAIL,
+    subject: "BrokenStitch partner enquiry",
+    payload: function (data) {
+      return {
+        form: "partner",
+        organisation: (data.get("organisation") || "").trim(),
+        name: (data.get("name") || "").trim(),
+        email: (data.get("email") || "").trim(),
+        phone: (data.get("phone") || "").trim(),
+        offer: (data.get("offer") || "").trim()
+      };
+    },
+    validate: function (payload) {
+      if (!payload.organisation) return "Organisation is required.";
+      if (!payload.name) return "Contact name is required.";
+      if (!payload.email) return "Email is required.";
+      if (!payload.offer) return "Say what you want to offer.";
+      return "";
+    },
+    mailtoBody: function (payload) {
+      return [
+        "Form: partner",
+        "Organisation: " + payload.organisation,
+        "Contact name: " + payload.name,
+        "Email: " + payload.email,
+        payload.phone ? "Phone: " + payload.phone : "",
+        "What you want to offer: " + payload.offer
       ].filter(Boolean).join("\n");
     }
   });
