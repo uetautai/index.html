@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gift received</title>
-  <!-- Layer B. Simple gift-received confirmation.
-       From: no-reply@brokenstitch.org.au (display name: BrokenStitch).
-       Reply-To: info@brokenstitch.org.au.
-       Director issues after the gift is actually received. Do not auto-send from a processor.
-       Finance Clerk does not issue or send. Do not include bank or card numbers. -->
+  <title>Donor statement</title>
+  <!-- Layer B. Annual (or year-to-date on request) donor statement notice.
+       Australian financial year: 1 July – 30 June.
+       From: info@brokenstitch.org.au. Attach the signed donor-statement PDF.
+       Do not point to a portal. Do not auto-send. Finance Clerk drafts; Director sends.
+       Do not include bank or card numbers. -->
 </head>
 <body style="margin:0;padding:0;background:#f5f4f0;font-family:Arial,Helvetica,sans-serif;color:#1a1a1a;">
-<div style="display:none;font-size:1px;color:#f5f4f0;max-height:0;overflow:hidden;">Thank you for your gift entered on {{DATE}}.</div>
+<div style="display:none;font-size:1px;color:#f5f4f0;max-height:0;overflow:hidden;">Your donor statement for {{PERIOD_LABEL}} is attached.</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f5f4f0;">
 <tr><td align="center" style="padding:24px 12px;">
   <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:#ffffff;border-collapse:collapse;">
@@ -33,11 +33,11 @@
 
     <tr>
       <td style="padding:28px 36px 32px;background-color:#ffffff;font-family:Arial,Helvetica,sans-serif;">
-        <p style="margin:0 0 16px;font-size:18px;line-height:1.35;font-weight:700;color:#1a1a1a;">Gift received</p>
-        <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#1a1a1a;">Thank you for your gift entered on {{DATE}}.</p>
-        <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#1a1a1a;">The amount of <strong>{{AMOUNT}}</strong> has been received by BROKEN STITCH LTD. Receipt {{RECEIPT_NO}}.</p>
-        <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#1a1a1a;">Keep this email as your receipt. BROKEN STITCH LTD · ABN 15 693 395 970. This is a gift, given voluntarily. Gifts of $2 or more to a deductible gift recipient are generally tax deductible in Australia.</p>
-        <p style="margin:0 0 18px;font-size:15px;line-height:1.65;color:#1a1a1a;">If you have questions, email <a href="mailto:info@brokenstitch.org.au" style="color:#004aac;text-decoration:underline;">info@brokenstitch.org.au</a>.</p>
+        <p style="margin:0 0 16px;font-size:18px;line-height:1.35;font-weight:700;color:#1a1a1a;">Donor statement</p>
+        <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#1a1a1a;">Your donor statement for {{PERIOD_LABEL}} is attached.</p>
+        <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#1a1a1a;">Total gifts received {{PERIOD_START}} – {{PERIOD_END}}: <strong>{{TOTAL_AMOUNT}}</strong>. Statement {{STATEMENT_NO}}.</p>
+        <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#1a1a1a;">Keep the attached statement for your records. BROKEN STITCH LTD · ABN 15 693 395 970. Each amount is a gift, given voluntarily. Gifts of $2 or more to a deductible gift recipient are generally tax deductible in Australia.</p>
+        <p style="margin:0 0 18px;font-size:15px;line-height:1.65;color:#1a1a1a;">If you have questions, or need a statement earlier than 30 June, email <a href="mailto:info@brokenstitch.org.au" style="color:#004aac;text-decoration:underline;">info@brokenstitch.org.au</a>.</p>
         <p style="margin:0;font-size:15px;line-height:1.65;color:#1a1a1a;">Thank you</p>
       </td>
     </tr>
