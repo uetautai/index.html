@@ -77,6 +77,10 @@ var FORM_ENDPOINT = "https://formspree.io/f/xppzpvld";
           if (!res.ok) throw new Error("Submit failed");
           form.reset();
           if (opts.id === "referral-form") setRoleVisibility();
+          if (opts.thankYou) {
+            window.location.href = opts.thankYou;
+            return;
+          }
           setStatus("Received. Thank you.", true);
         }).catch(function () {
           setStatus("Could not send from this page. Please email " + opts.email + ".", false);
@@ -98,6 +102,7 @@ var FORM_ENDPOINT = "https://formspree.io/f/xppzpvld";
     statusId: "form-status",
     email: ADMIN_EMAIL,
     subject: "BrokenStitch contact",
+    thankYou: "thank-you.html",
     payload: function (data) {
       return {
         form: "referral",
