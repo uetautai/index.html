@@ -1463,6 +1463,10 @@ a {
   background: #fff;
 }
 
+.donate-amount-custom {
+  grid-column: 1 / -1;
+}
+
 .donate-dollar {
   font-size: 1.45rem;
   font-weight: 800;
