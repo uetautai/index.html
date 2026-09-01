@@ -755,7 +755,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.65rem;
+  gap: 0.5rem;
 }
 
 .charity-badge-link {
@@ -779,13 +779,13 @@ a {
 
 .footer img.charity-badge {
   display: block;
-  height: 140px;
-  width: 140px;
+  height: 96px;
+  width: 96px;
   max-width: none;
   object-fit: contain;
-  background: #fff;
-  padding: 0.4rem;
-  border-radius: 12px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 
 .dgr-label {
@@ -805,11 +805,11 @@ a {
 }
 
 .footer-logo img {
-  height: 48px;
+  height: 52px;
   width: auto;
-  background: #fff;
-  padding: 0.25rem 0.4rem;
-  border-radius: 8px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 
 .footer-brand p {
