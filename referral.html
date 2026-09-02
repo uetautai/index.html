@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Referral. BrokenStitch. After-hours Youth Response for High Risk Youth. Logan, Queensland.">
-  <title>Referral | BrokenStitch</title>
+  <meta name="description" content="Referral enquiry. BrokenStitch. After-hours Youth Response for High Risk Youth. Logan, Queensland.">
+  <title>Referral enquiry | BrokenStitch</title>
   <link rel="stylesheet" href="broken.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <a class="skip-link" href="#referral-form">Skip to referral form</a>
+  <a class="skip-link" href="#referral-form">Skip to referral enquiry form</a>
   <header class="header header-solid">
     <a href="index.html" class="logo">
       <img src="images/logo-color-nobackground.png" alt="BrokenStitch" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
@@ -30,28 +30,20 @@
   </header>
   <main id="main" class="page">
     <div class="container page-wrap">
-      <h1 class="cap-heading">Referral</h1>
+      <h1 class="cap-heading">Referral enquiry</h1>
       <p class="page-lead">After-hours Youth Response for High Risk Youth. Monday–Friday, 5:00 pm–10:00 pm. Logan, Queensland.</p>
-      <p class="panel-note">Subject to panel approval.</p>
+      <p class="panel-note">This is an enquiry from an organisation. It does not place a young person. Referrals are subject to panel approval.</p>
       <form class="referral-form" id="referral-form" novalidate>
-        <fieldset class="form-fieldset">
-          <legend class="form-legend">I am contacting as</legend>
-          <div class="choice-row">
-            <label class="choice">
-              <input type="radio" name="contact_type" value="individual" required>
-              <span>Individual</span>
-            </label>
-            <label class="choice">
-              <input type="radio" name="contact_type" value="organisation" required>
-              <span>Organisation</span>
-            </label>
-          </div>
-        </fieldset>
+        <input type="hidden" name="contact_type" value="organisation">
         <label class="field">
-          <span>Name</span>
+          <span>Organisation</span>
+          <input type="text" name="organisation" autocomplete="organization" required>
+        </label>
+        <label class="field">
+          <span>Contact name</span>
           <input type="text" name="name" autocomplete="name" required>
         </label>
-        <label class="field" id="role-field" hidden>
+        <label class="field" id="role-field">
           <span>Role <em>(optional)</em></span>
           <input type="text" name="role" autocomplete="organization-title">
         </label>
@@ -64,10 +56,11 @@
           <input type="tel" name="phone" autocomplete="tel">
         </label>
         <label class="field">
-          <span>Message <em>(optional)</em></span>
-          <textarea name="message" rows="4"></textarea>
+          <span>Message <em>(optional — do not name a young person)</em></span>
+          <textarea name="message" rows="4" autocomplete="off"></textarea>
         </label>
-        <button type="submit" class="btn-primary form-submit">Submit</button>
+        <button type="submit" class="btn-primary form-submit">Submit enquiry</button>
+        <p class="fine-print">Do not include a young person’s name or other identifying details on this page.</p>
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
