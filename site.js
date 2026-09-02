@@ -36,20 +36,6 @@ var FORM_ENDPOINT = "https://formspree.io/f/xppzpvld";
     if (!form) return;
 
     var statusEl = document.getElementById(opts.statusId);
-    var roleField = document.getElementById("role-field");
-
-    function setRoleVisibility() {
-      var org = form.querySelector('input[name="contact_type"][value="organisation"]');
-      var show = org && org.checked;
-      if (roleField) roleField.hidden = !show;
-    }
-
-    if (opts.id === "referral-form") {
-      form.querySelectorAll('input[name="contact_type"]').forEach(function (input) {
-        input.addEventListener("change", setRoleVisibility);
-      });
-      setRoleVisibility();
-    }
 
     function setStatus(message, ok) {
       if (!statusEl) return;
@@ -76,7 +62,6 @@ var FORM_ENDPOINT = "https://formspree.io/f/xppzpvld";
         }).then(function (res) {
           if (!res.ok) throw new Error("Submit failed");
           form.reset();
-          if (opts.id === "referral-form") setRoleVisibility();
           if (opts.thankYou) {
             window.location.href = opts.thankYou;
             return;
@@ -101,12 +86,13 @@ var FORM_ENDPOINT = "https://formspree.io/f/xppzpvld";
     id: "referral-form",
     statusId: "form-status",
     email: ADMIN_EMAIL,
-    subject: "BrokenStitch contact",
+    subject: "BrokenStitch referral enquiry",
     thankYou: "thank-you.html",
     payload: function (data) {
       return {
-        form: "referral",
-        contact_type: data.get("contact_type") || "",
+        form: "referral-enquiry",
+        contact_type: "organisation",
+        organisation: (data.get("organisation") || "").trim(),
         name: (data.get("name") || "").trim(),
         role: (data.get("role") || "").trim(),
         email: (data.get("email") || "").trim(),
@@ -115,15 +101,16 @@ var FORM_ENDPOINT = "https://formspree.io/f/xppzpvld";
       };
     },
     validate: function (payload) {
-      if (!payload.contact_type) return "Choose individual or organisation.";
-      if (!payload.name) return "Name is required.";
+      if (!payload.organisation) return "Organisation is required.";
+      if (!payload.name) return "Contact name is required.";
       if (!payload.email) return "Email is required.";
       return "";
     },
     mailtoBody: function (payload) {
       return [
-        "Contact type: " + payload.contact_type,
-        "Name: " + payload.name,
+        "Form: referral enquiry",
+        "Organisation: " + payload.organisation,
+        "Contact name: " + payload.name,
         payload.role ? "Role: " + payload.role : "",
         "Email: " + payload.email,
         payload.phone ? "Phone: " + payload.phone : "",
