@@ -814,6 +814,7 @@ a {
 
 .footer-brand p {
   font-size: 0.92rem;
+  font-style: italic;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.78);
   max-width: 28rem;
