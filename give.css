@@ -211,3 +211,16 @@
 .footer-brand p {
   font-style: italic;
 }
+
+.giving-page .give-block p.fine-print,
+.giving-page .donate-panel .fine-print {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+.giving-page .give-block p.fine-print:last-child,
+.giving-page .donate-panel .fine-print:last-child {
+  margin-bottom: 0;
+}
