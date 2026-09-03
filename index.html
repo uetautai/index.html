@@ -8,6 +8,7 @@
   <title>BrokenStitch | After-hours Youth Response for High Risk Youth</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="broken.css">
+  <link rel="stylesheet" href="give.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,17 +19,27 @@
     <div class="hero-bg" role="img" aria-label=""></div>
     <div class="hero-overlay"></div>
     <header class="header">
-      <a href="index.html" class="logo">
-        <img src="images/logo-color-nobackground.png" alt="BrokenStitch" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
-        <span class="logo-text" hidden>BrokenStitch</span>
-      </a>
-      <nav class="nav" id="site-nav" aria-label="Primary">
-        <a href="referral.html">Referral</a>
-        <a href="child-safety.html">Child safety commitment</a>
-        <a href="about.html">About</a>
-        <a href="partner.html">Partner</a>
-        <a href="donate.html" class="nav-donate">Donate</a>
-      </nav>
+      <div class="header-left">
+        <a href="index.html" class="logo">
+          <img src="images/logo-color-nobackground.png" alt="BrokenStitch" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+          <span class="logo-text" hidden>BrokenStitch</span>
+        </a>
+        <nav class="nav" id="site-nav" aria-label="Primary">
+          <a href="referral.html">Referral</a>
+          <a href="child-safety.html">Child safety commitment</a>
+          <a href="about.html">About</a>
+          <div class="nav-item has-menu">
+            <a href="donate.html" class="nav-parent">Ways to donate</a>
+            <div class="nav-menu">
+              <a href="donate.html#card">Donate by card</a>
+              <a href="philanthropy.html">Philanthropic giving</a>
+              <a href="corporate.html">Corporate partnership</a>
+              <a href="workplace-giving.html">Workplace giving</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <a href="donate.html" class="header-give">Donate</a>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -64,7 +75,6 @@
         <a href="referral.html">Referral</a>
         <a href="child-safety.html">Child safety</a>
         <a href="about.html">About</a>
-        <a href="partner.html">Partner</a>
         <a href="donate.html">Donate</a>
         <a href="tel:+61459723335">Contact</a>
       </nav>
