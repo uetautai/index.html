@@ -196,3 +196,18 @@
 @media (min-width: 901px) {
   .give-paths { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 }
+
+
+.giving-hours {
+  font-size: 0.92rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 2.25rem;
+  max-width: 36rem;
+}
+
+.footer-brand p {
+  font-style: italic;
+}
