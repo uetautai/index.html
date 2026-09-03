@@ -3,7 +3,7 @@
 */
 var ADMIN_EMAIL = "referrals@brokenstitch.org.au";
 var SAFETY_EMAIL = "info@brokenstitch.org.au";
-var FORM_ENDPOINT = "https://formspree.io/f/xjyvrpag"; // BrokenStitch referral enquiry (also used for partner/safety until info@ is a linked Formspree email)
+var FORM_ENDPOINT = "https://formspree.io/f/xjyvrpag";
 
 (function () {
   var toggle = document.querySelector(".menu-toggle");
@@ -21,7 +21,13 @@ var FORM_ENDPOINT = "https://formspree.io/f/xjyvrpag"; // BrokenStitch referral 
     });
 
     nav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
+      link.addEventListener("click", function (event) {
+        if (link.classList.contains("nav-parent") && window.matchMedia("(max-width: 1100px)").matches) {
+          event.preventDefault();
+          var item = link.closest(".nav-item");
+          if (item) item.classList.toggle("is-open");
+          return;
+        }
         setOpen(false);
       });
     });
@@ -34,26 +40,18 @@ var FORM_ENDPOINT = "https://formspree.io/f/xjyvrpag"; // BrokenStitch referral 
   function wireForm(opts) {
     var form = document.getElementById(opts.id);
     if (!form) return;
-
     var statusEl = document.getElementById(opts.statusId);
-
     function setStatus(message, ok) {
       if (!statusEl) return;
       statusEl.textContent = message;
       statusEl.className = "form-status" + (ok ? " is-ok" : " is-error");
     }
-
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       var data = new FormData(form);
       var payload = opts.payload(data);
-
       var err = opts.validate(payload);
-      if (err) {
-        setStatus(err, false);
-        return;
-      }
-
+      if (err) { setStatus(err, false); return; }
       if (FORM_ENDPOINT) {
         fetch(FORM_ENDPOINT, {
           method: "POST",
@@ -61,10 +59,7 @@ var FORM_ENDPOINT = "https://formspree.io/f/xjyvrpag"; // BrokenStitch referral 
           body: JSON.stringify(payload)
         }).then(function (res) {
           if (!res.ok) throw new Error("Submit failed");
-          if (opts.thankYou) {
-            window.location.href = opts.thankYou;
-            return;
-          }
+          if (opts.thankYou) { window.location.href = opts.thankYou; return; }
           form.reset();
           setStatus("Received. Thank you.", true);
         }).catch(function () {
@@ -72,12 +67,10 @@ var FORM_ENDPOINT = "https://formspree.io/f/xjyvrpag"; // BrokenStitch referral 
         });
         return;
       }
-
       var body = opts.mailtoBody(payload);
-      var mailto = "mailto:" + encodeURIComponent(opts.email) +
+      window.location.href = "mailto:" + encodeURIComponent(opts.email) +
         "?subject=" + encodeURIComponent(opts.subject) +
         "&body=" + encodeURIComponent(body);
-      window.location.href = mailto;
       setStatus("Could not send from this page. Please email " + opts.email + ".", false);
     });
   }
@@ -124,11 +117,11 @@ var FORM_ENDPOINT = "https://formspree.io/f/xjyvrpag"; // BrokenStitch referral 
     id: "partner-form",
     statusId: "partner-form-status",
     email: SAFETY_EMAIL,
-    subject: "BrokenStitch partner enquiry",
+    subject: "BrokenStitch corporate partnership enquiry",
     payload: function (data) {
       return {
-        form: "partner",
-        _subject: "BrokenStitch partner enquiry",
+        form: "corporate-partnership",
+        _subject: "BrokenStitch corporate partnership enquiry",
         organisation: (data.get("organisation") || "").trim(),
         name: (data.get("name") || "").trim(),
         email: (data.get("email") || "").trim(),
@@ -145,7 +138,7 @@ var FORM_ENDPOINT = "https://formspree.io/f/xjyvrpag"; // BrokenStitch referral 
     },
     mailtoBody: function (payload) {
       return [
-        "Form: partner",
+        "Form: corporate partnership",
         "Organisation: " + payload.organisation,
         "Contact name: " + payload.name,
         "Email: " + payload.email,
@@ -166,9 +159,7 @@ var FORM_ENDPOINT = "https://formspree.io/f/xjyvrpag"; // BrokenStitch referral 
           form: form.getAttribute("data-form") || "child-safety",
           _subject: form.getAttribute("data-subject") || "BrokenStitch child safety concern"
         };
-        data.forEach(function (value, key) {
-          payload[key] = String(value).trim();
-        });
+        data.forEach(function (value, key) { payload[key] = String(value).trim(); });
         return payload;
       },
       validate: function (payload) {
@@ -178,9 +169,7 @@ var FORM_ENDPOINT = "https://formspree.io/f/xjyvrpag"; // BrokenStitch referral 
       mailtoBody: function (payload) {
         var order = ["form", "about", "young_person_first_name", "role", "name", "email", "phone", "follow_up", "message"];
         var lines = [];
-        order.forEach(function (key) {
-          if (payload[key]) lines.push(key + ": " + payload[key]);
-        });
+        order.forEach(function (key) { if (payload[key]) lines.push(key + ": " + payload[key]); });
         Object.keys(payload).forEach(function (key) {
           if (order.indexOf(key) === -1 && payload[key] && key !== "_subject") lines.push(key + ": " + payload[key]);
         });
