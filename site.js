@@ -146,7 +146,8 @@ var FORM_ENDPOINT = "https://formspree.io/f/xjyvrpag";
         name: (data.get("name") || "").trim(),
         email: (data.get("email") || "").trim(),
         phone: (data.get("phone") || "").trim(),
-        offer: (data.get("offer") || "").trim()
+        offer: (data.get("offer") || "").trim(),
+        acknowledgement: (data.get("acknowledgement") || "not-at-all").trim()
       };
     },
     validate: function (payload) {
@@ -163,7 +164,8 @@ var FORM_ENDPOINT = "https://formspree.io/f/xjyvrpag";
         "Contact name: " + payload.name,
         "Email: " + payload.email,
         payload.phone ? "Phone: " + payload.phone : "",
-        "How you would like to work with us: " + payload.offer
+        "How you would like to work with us: " + payload.offer,
+        "Acknowledgement: " + payload.acknowledgement
       ].filter(Boolean).join("\n");
     }
   });
