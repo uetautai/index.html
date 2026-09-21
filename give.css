@@ -197,6 +197,7 @@
   .give-paths { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 }
 
+
 .giving-hours {
   font-size: 0.92rem;
   font-style: italic;
